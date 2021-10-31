@@ -1,0 +1,8 @@
+<h1>{{name}} welcome!</h1>
+
+{{#each posts as |userPost|}}
+<div>
+    <a href='/post/{{userPost.id}}'>{{userPost.title}}</a>
+    <p>{{userPost.content}}</p>
+  </div>
+  {{/each}}

@@ -1,0 +1,7 @@
+{{#each post as |post|}}
+  <div>
+    <a href='/post/{{post.id}}'>{{post.title}}</a>
+    <span>{{post.user.name}}</span>
+    <p>{{post.content}}</p>
+  </div>
+{{/each}}
