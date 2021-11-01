@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
     catch (err){
         res.status(500).json(err)
     }
-})
+});
 
 router.get('/profile', async (req, res) => {
     if(!req.session.user_id){
@@ -39,7 +39,7 @@ router.get('/profile', async (req, res) => {
         console.log(err);
         res.status(418).json(err)
     }
-})
+});
 
 router.get('/post/:id', async (req, res) => {
     try{
@@ -58,13 +58,19 @@ router.get('/post/:id', async (req, res) => {
         console.log(err);
         res.status(500).json(err)
     }
-})
+});
 
 router.get('/login', (req, res) => {
     if(req.session.logged_in){
         res.redirect('/profile')
     }
     res.render('login')
-})
+});
+
+router.get('/new', (req, res) =>{
+    
+        res.render('new')
+    
+});
 
 module.exports = router

@@ -15,15 +15,20 @@
       </header>
       <nav>
         {{#if logged_in}}
-          <a href='/profile'>Profile</a>
+          <a class='btn btn-warning text-white' href='/'>Dashboard</a>
+          |
+          <a class='btn btn-warning text-white' href='/profile'>Profile</a>          
           |
           <button class='btn btn-warning text-white' id='logout'>Logout</button>
         {{else}}
-          <a class='btn btn-warning text-white' href='/login'>Login</a>
+          <a class='btn btn-warning text-white' href='/login'>Login/Sign up</a>
         {{/if}}
       </nav>
+
     </div>
+    <div class='container'>
     {{{body}}}
+    </div>
 
     {{#if logged_in}}
       <script src='/js/logout.js'></script>

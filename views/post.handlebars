@@ -1,6 +1,11 @@
-<div>
-  <h1>{{title}}</h1>
-  <p>{{content}}</p>
-  <h4>Created by {{user.name}}</h4>
-  <button>Add a Comment</button>
+
+<div class="container">
+  <h2 class="text-success">> {{title}}</h2>
+  <div class="container">
+  <p class="text-white">{{content}}</p>
+  <h6 class="text-info">\Created by {{user.name}}</h6>
+  </div>
+  {{#if logged_in}}
+  <button type='submit' class='btn btn-warning text-white'>Add a Comment</button>
+  {{/if}}
 </div>

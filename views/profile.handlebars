@@ -1,8 +1,13 @@
-<h1>{{name}} welcome!</h1>
-
+<div class="container">
+<h1 class="text-success">>Welcome, {{name}}!█</h1>
+<hr class="my-4">
+<a class="btn btn-warning text-white" href="new">Create a new post</a>
+<hr class="my-4">
 {{#each posts as |userPost|}}
-<div>
-    <a href='/post/{{userPost.id}}'>{{userPost.title}}</a>
-    <p>{{userPost.content}}</p>
+  <div class="container">
+    <h5><a class="text-info" href='/post/{{userPost.id}}'>{{userPost.title}}</a></h5>
+    <p class="text-white">{{userPost.content}}</p>
   </div>
-  {{/each}}
+{{/each}}
+
+<script type="text/javascript" src="/js/profile.js"></script>  
