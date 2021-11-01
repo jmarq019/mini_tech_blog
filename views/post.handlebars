@@ -5,7 +5,25 @@
   <p class="text-white">{{content}}</p>
   <h6 class="text-info">\Created by {{user.name}}</h6>
   </div>
+  <hr class="my-4">
+<div class="container">
+  {{#each comment as |postComment|}}
+  <div class="container">
+    <p class="text-white">{{postComment.content}}</p>
+    <p class="blockquote-footer">Created by {{user.name}}</p>
+  </div>
+{{/each}}
+</div>
+
+
+
   {{#if logged_in}}
+  <form id="new-comment">
+    <div class="form-group">
+    <textarea class="form-control" id="new-comment-content" rows="3"></textarea>
+    </div>
   <button type='submit' class='btn btn-warning text-white'>Add a Comment</button>
+  </form>
+  <script type='text/javascript' src="/js/post.js"></script>
   {{/if}}
 </div>
