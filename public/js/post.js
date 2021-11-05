@@ -2,12 +2,14 @@ newCommentFormEl = document.getElementById('new-comment');
 
 newCommentFormEl.addEventListener('submit', async (e)=>{
     e.preventDefault()
+    const textAreaEl = document.getElementById('new-comment-content')
+    const contentEl = textAreaEl.value
+    const post_id = textAreaEl.getAttribute('data-post_id')
 
-    const contentEl = document.getElementById('new-comment-content').value
-
+    if(contentEl){
     const resp = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({ content:contentEl }),
+        body: JSON.stringify({ content:contentEl, post_id }),
         headers: { 'Content-Type': 'application/json' }
     })
 
@@ -17,6 +19,7 @@ newCommentFormEl.addEventListener('submit', async (e)=>{
     } else {
         console.log(resp)
         alert("Sorry, we couldn't create your comment")
+    }
     }
 
 });

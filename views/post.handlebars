@@ -7,11 +7,12 @@
   </div>
   <hr class="my-4">
 <div class="container">
-  {{#each comment as |postComment|}}
+  {{#each comments}}
   <div class="container">
-    <p class="text-white">{{postComment.content}}</p>
+    <p class="text-white">{{content}}</p>
     <p class="blockquote-footer">Created by {{user.name}}</p>
   </div>
+  <hr class="my-4">
 {{/each}}
 </div>
 
@@ -20,7 +21,7 @@
   {{#if logged_in}}
   <form id="new-comment">
     <div class="form-group">
-    <textarea class="form-control" id="new-comment-content" rows="3"></textarea>
+    <textarea class="form-control" id="new-comment-content" rows="3" data-post_id={{id}}></textarea>
     </div>
   <button type='submit' class='btn btn-warning text-white'>Add a Comment</button>
   </form>
