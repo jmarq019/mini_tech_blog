@@ -36,7 +36,7 @@ signupForm.addEventListener('submit', async (e) => {
         })
 
         if(resp.ok){
-            location.replace = '/profile'
+            location.href = '/profile'
         } else {
             alert('User already exists?')
         }
