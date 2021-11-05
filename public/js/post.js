@@ -21,5 +21,4 @@ newCommentFormEl.addEventListener('submit', async (e)=>{
         alert("Sorry, we couldn't create your comment")
     }
     }
-
 });
